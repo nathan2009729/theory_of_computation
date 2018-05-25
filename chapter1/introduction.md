@@ -18,15 +18,15 @@ Regular language(RL)，便是可以用finite automata(FA)辨識的語言。finit
 而某language是regular $$\Leftrightarrow$$ 有NFA可辨識該language。
 
 而Regular language在union,concatenation,star等operation下是close的。也就是說，RL經過這三符號運算依然是RL。
-證明圖示如下：
+證明圖示如下：  
 union:  
-![](https://i.imgur.com/1l83mox.jpg)
+![](https://i.imgur.com/ZHQTxTi.png)
 
 
 concatenation:  
-![]()
+![](https://i.imgur.com/GWgl18B.png)
 
 star:  
-![]()
+![](https://i.imgur.com/co1UIMA.png)
 
 $$\delta(r_i,w_{i+1}) = r_{i+1}$$

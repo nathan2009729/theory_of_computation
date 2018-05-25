@@ -1,36 +1,20 @@
 {
-    "author": "Chengwei Yang <me@chengweiyang.cn>",
-    "description": "This is a sample book created by gitbook",
-    "extension": null,
-    "generator": "site",
-    "isbn": null,
-    "links": {
-        "sharing": {
-            "all": null,
-            "facebook": null,
-            "google": null,
-            "twitter": null,
-            "weibo": null
+    "plugins": ["disqus", "richquotes", "katex", "tbfed-pagefooter@^0.0.1"],
+    "pluginsConfig": {
+        "disqus": {
+            "shortName": "https-www-gitbook-com-stormtiti"
         },
-        "sidebar": {
-            "Chengwei's Blog": "http://www.chengweiyang.cn"
+        "richquotes":
+        {
+            "star": {
+                "alert": "warning",
+                "picto": "fa-star"
+            }
+        },
+        "tbfed-pagefooter": {
+            "copyright": "全篇仅提供学习，请勿用于商业用途，翻译版权【泡泡机器人】",
+            "modify_label": "修订时间：",
+            "modify_format": "YYYY-MM-DD"
         }
-    },
-    "output": null,
-    "pdf": {
-        "fontSize": 12,
-        "footerTemplate": null,
-        "headerTemplate": null,
-        "margin": {
-            "bottom": 36,
-            "left": 62,
-            "right": 62,
-            "top": 36
-        },
-        "pageNumbers": false,
-        "paperSize": "a4"
-    },
-    "plugins": [],
-    "title": "Sample GitBook",
-    "variables": {}
+    }
 }

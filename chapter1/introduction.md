@@ -30,7 +30,14 @@ star:
 ![](https://i.imgur.com/co1UIMA.png)
 
 
-某language是regular $$\Leftrightarrow$$ some regular expression describe it。
+regular expression(左行)跟FA的關係入下圖:  
+![](https://i.imgur.com/VmZlydF.png)
 
+某language是regular $$\Leftrightarrow$$ some regular expression describe it。
+此證明會用到GNFA，需注意。  
+proof:  
+![](https://i.imgur.com/C3k4Q5X.png)  
+![](https://i.imgur.com/8aYYTBR.png)  
+![](https://i.imgur.com/YzcCAEX.png)  
 
 $$\delta(r_i,w_{i+1}) = r_{i+1}$$

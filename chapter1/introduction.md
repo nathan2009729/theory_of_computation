@@ -29,4 +29,8 @@ concatenation:
 star:  
 ![](https://i.imgur.com/co1UIMA.png)
 
+
+某language是regular $$\Leftrightarrow$$ some regular expression describe it。
+
+
 $$\delta(r_i,w_{i+1}) = r_{i+1}$$

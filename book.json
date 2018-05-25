@@ -1,5 +1,5 @@
 {
-    "plugins": ["disqus", "richquotes", "katex", "tbfed-pagefooter@^0.0.1"],
+    "plugins": ["disqus", "richquotes", "katex", "tbfed-pagefooter@^0.0.1", "mathjax"],
     "pluginsConfig": {
         "disqus": {
             "shortName": "https-www-gitbook-com-stormtiti"
@@ -12,9 +12,9 @@
             }
         },
         "tbfed-pagefooter": {
-            "copyright": "全篇仅提供学习，请勿用于商业用途，翻译版权【泡泡机器人】",
-            "modify_label": "修订时间：",
-            "modify_format": "YYYY-MM-DD"
+            "copyright": "",
+            "modify_label": "",
+            "modify_format": ""
         }
     }
 }

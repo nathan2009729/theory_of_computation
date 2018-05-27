@@ -11,16 +11,16 @@
 ![](https://i.imgur.com/nm0oyTe.png)
 
 2.
-重新看一次之前可以找到FA的題目[M.Sipser 1.71a]:
-![](https://i.imgur.com/YYvxgLd.png)  
-再來看下面例題:
+重新看一次之前可以找到FA的題目[M.Sipser 1.71a]:  
+![](https://i.imgur.com/YYvxgLd.png)    
+再來看下面例題:  
 ![](https://i.imgur.com/kK3AKrL.png)
-![](https://i.imgur.com/4xyUkqm.png)
+![](https://i.imgur.com/4xyUkqm.png)  
 都需要用到pumping lemma。
 
 3.在解決[M.Sipser 1.66]前，可以先看這類似的問題:  
-![](https://i.imgur.com/uLp9OAr.png)  
-及其解答:
+![](https://i.imgur.com/uLp9OAr.png)    
+及其解答:  
 ![](https://i.imgur.com/2uCeG8R.png)
 ![](https://i.imgur.com/RHD3ARJ.png)
 ![](https://i.imgur.com/L7KCj1D.png)

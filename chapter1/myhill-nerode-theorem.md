@@ -1,6 +1,6 @@
 要看這定理之前，先來看一個簡單的FA，叫它M吧，M能接受的語言又可以被稱為L(M)。
 
-![](https://i.imgur.com/Nes8TmL.gif)
+![](https://i.imgur.com/Nes8TmL.jpg)
 
 這個FA的3個state，其實我們可以把它們稱為此語言的3個equivalence class(簡稱e.c.)，每個e.c.是一個很多string所構成的集合。最左邊的start state我們可以把它寫成[$$\varepsilon$$]，由$$\varepsilon$$代表這個e.c.，可以由圖知，[$$\varepsilon$$]={$$\varepsilon$$, aaa, aab,...}，這set同時也是走到start state時所產生的string的集合。
 

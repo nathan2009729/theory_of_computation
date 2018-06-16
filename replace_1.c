@@ -2,7 +2,7 @@
 #include <stdlib.h>
 int main(){
 
-    FILE *in = fopen("exercise.md","r");
+    FILE *in = fopen("equivalent-of-cfg-and-pda.md","r");
     FILE *out = fopen("back.txt","w");
     
     int ch = 0;

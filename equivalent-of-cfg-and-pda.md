@@ -21,7 +21,7 @@ $$((q_0,b,X)(q_i,\varepsilon))$$，代表在狀態$$q_0$$，tape讀到b，且sta
 很明顯，因為只執行pop動作，就是產生合法的字串。
 
 case 2: $$((p,a,X)(r,Y))$$
-它寫成$$[pXq] \rightarrow a[rYq]$$，這裡的q是PDA中的所有state，所以如果PDA中有n個state，光這transition就要寫成n個CFG rule，也就是$$S \rightarrow [rYq_0] |[rYq_1]|...|[rYq_n]$$。
+它寫成$$[pXq] \rightarrow a[rYq]$$，這裡的q是PDA中的所有state，所以如果PDA中有n個state，光這transition就要寫成n個CFG rule。
 理由:
 此transition它pop了X並push Y，狀態由p到r，讀取了a。所以它產生的字串是什麼？是a，還有從狀態r，stack top Y的前提下產生的字串。以CFG來說，它產生的string，是a後面再跟著$$[rYq]$$所產生的字串，所以寫成$$[pXq] \rightarrow a[rYq]$$。而且到達PDA中不同的狀態還會產生不同的字串，假設共n個狀態，那就要寫成n個CFG rule。
 
@@ -36,9 +36,50 @@ CFG的rule寫成$$[pXq] \rightarrow a[rY_1s_1][s_1Y_2s_2]...[s_{k-1}Y_kq]$$
 可以看得出來，就是case 3的推廣。一如既往，$$s_1$$到$$s_{k-1}$$要把所有state給排列組合上去，q也是喔！
 
 要怎麼證明這樣的建構是對的？需要證明以下定理:
-![](https://i.imgur.com/ENIV9vI.png)
+$$(q_0,w,Z_0) \vdash^* (p,\varepsilon,\varepsilon) \Leftrightarrow [q_0Z_0p ] \Rightarrow^* w$$
 iff的左邊是PDA，右邊是CFG。用白話文來說，如果PDA可以在狀態p接受字串$$w$$，若且唯若CFG的相對應文法，也就是$$[q_0z_op]$$這個變數可以推導出w。
 
+要注意，以下證明用更general的$$A \in \Gamma$$代替專門代表stack  buttom的$$Z_0$$，以$$q,q' \in Q$$代替定理中的$$q_0, p$$。所以想證明的式子要改成
+$$[qAq'] \Rightarrow^* x \Leftrightarrow (q,x,A) \vdash^* (q',\varepsilon,\varepsilon)$$
+
+$$\it proof:$$
+先證明$$\Rightarrow$$的部份，對推導的step數，$$n$$，做induction。
+
+$$\bf Basis$$
+$$n=1$$，代表x是$$\varepsilon$$或是一個單一字元。我們用到的是case 1，也就是說$$[qAq'] \Rightarrow x$$是$$((q,x,A)(q',\varepsilon))$$變出來的。所以很顯然，
+$$(q,x,A) \vdash (q',\varepsilon,\varepsilon)$$
+
+$$\bf Hypothesis$$
+假設 $$k \geq 1$$ and $$n \leq k$$，
+if $$[qAq'] \Rightarrow^n x$$，then $$(q,x,A) \vdash^* (q',\varepsilon,\varepsilon)$$
+
+$$\bf Inductive$$
+欲證$$[qAq'] \Rightarrow^{k+1} x$$時，$$(q,x,A) \vdash^* (q',\varepsilon,\varepsilon)$$也成立。
+因為$$k \geq 1$$，所以我們會用到case 4，所以字串x它派生的第一步，會是
+$$[qAq'] \rightarrow \sigma[q_1B_1q_2][q_2B_2q_3]...[q_mB_mq']$$
+其中$$\sigma$$是tape上可能出現的任一字元或是空字串，$$m \geq 1$$。
+假設以上所出現的每一個$$[q_iB_iq_{i+1}]$$，$$i \geq 1$$，最後都會派生出字串$$x_i$$，$$[q_mB_mq']$$會派生出字串$$x_m$$。因為每個$$x_i$$它生成所需的step數小於$$k$$，由 Hypothesis可知，$$(q_i,x_i,B_i) \vdash^* (q_{i+1},\varepsilon,\varepsilon)$$且$$(q_m,x_m,B_m) \vdash^* (q',\varepsilon,\varepsilon)$$
+所以$$(q,x,A) = (q,\sigma x_1x_2...x_m,A)$$，最後一定可以讀完string並把stack清空，得證。
+
+再證明$$\Leftarrow$$的部份，對機器讀完字串並清空堆疊所需的step數，$$n$$，做induction。
+$$\bf Basis$$
+$$n=1$$，代表一定有$$((q,x,A)(q',\varepsilon))$$，用case 1即可得證。
+
+$$\bf Hypothesis$$
+假設 $$k \geq 1$$ and $$n \leq k$$，
+對所有$$q,q' \in Q$$以及$$x \in \Sigma^*$$的所有排列組合，都可以有以下推理: if $$(q,x,A) \vdash^n (q',\varepsilon,\varepsilon)$$, then $$[qAq'] \Rightarrow^* x$$
+
+$$\bf Inductive$$
+欲證$$(q,x,A) \vdash^{k+1} (q',\varepsilon,\varepsilon)$$, then $$[qAq'] \Rightarrow^* x$$。首先假設$$x = \sigma y$$，其中$$\sigma$$是tape上可能出現的任一個字元或是空字元，$$y \in \Sigma^*$$。
+所以機器在$$(q,x,A) = (q,\sigma y,A)$$這config的前提下移動的第一步，config會變成$$(q_1,y,B_1B_2B_3...B_m)$$--會這樣假設，是因為這裡假設$$((q,\sigma,A)(q_1,B_1B_2B_3...B_m))$$。
+我們繼續假設，$$x_i$$是可以讓狀態從$$q_i$$到$$q_{i+1}$$，且pop掉$$B_i$$的字串，寫成形式化的樣子，就是$$(q_i,x_i,B_i) \vdash (q_{i+1},\varepsilon,\varepsilon)$$，當然，$$i$$是$$1 \leq i \leq m-1$$; 而$$(q_m,x_m,B_m) \vdash (q',\varepsilon,\varepsilon)$$。
+這時開始利用Hypothesis，可以得出$$[q_iB_iq_{i+1}] \Rightarrow^* x_{i+1}$$以及$$[q_mB_mq'] \Rightarrow^* x_m$$。
+再回到我們剛剛的$$(q,\sigma y,A)$$，可以推導出$$[qAq'] \\
+\rightarrow \sigma [q_1B_1q_2][q_2B_2q_3]...[q_mB_mq']\\ 
+= \sigma x_1x_2...x_m\\
+= x$$
+證畢。
+-----------
 我們來看個實際例子，知道一下從PDA推導CFG是一件多吃力的工作吧。給出以下PDA:
 ![](https://i.imgur.com/9E1WP2O.png)
 可以整理出以下transition function:

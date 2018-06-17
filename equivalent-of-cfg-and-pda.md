@@ -78,7 +78,11 @@ $$\bf Inductive$$
 \rightarrow \sigma [q_1B_1q_2][q_2B_2q_3]...[q_mB_mq']\\ 
 = \sigma x_1x_2...x_m\\
 = x$$
-證畢。
+證畢。以下是原證明，出自Introduction to Languages and the Theory of Computation，John Martin。
+![](https://i.imgur.com/lP6HYeR.png)
+![](https://i.imgur.com/1RbgBer.png)
+![](https://i.imgur.com/izex2oN.png)
+
 -----------
 我們來看個實際例子，知道一下從PDA推導CFG是一件多吃力的工作吧。給出以下PDA:
 ![](https://i.imgur.com/9E1WP2O.png)

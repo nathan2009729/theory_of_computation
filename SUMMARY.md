@@ -10,5 +10,5 @@
   * Context Free Grammar
   * [Pushdown Automata](pushdown-automata.md)
   * [Equivalent of CFG and PDA](equivalent-of-cfg-and-pda.md)
-  * Pumping Lemma of CFL
+  * [Pumping Lemma of CFL](pumping-lemma-of-cfl.md)
 

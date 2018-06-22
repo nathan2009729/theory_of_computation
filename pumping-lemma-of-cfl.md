@@ -40,6 +40,48 @@ $$\it Proof:$$
 ![](https://i.imgur.com/Z8CzdAi.png)
 ![](https://i.imgur.com/XE8bGmr.png)
 
+-----------
+範例題目:
+
+[Sipser 2.42(d)]
+![](https://i.imgur.com/JclHoDh.png)
+Sol:
+![](https://i.imgur.com/P1WxSfp.png)
+
+[Sipser 2.43]
+![](https://i.imgur.com/kdxULzT.png)
+Sol:
+令$$L = \{0^p1^{2p}0^p\}$$割成$$uvxyz$$，可以分成兩個大case，就是case1: $$vxy$$只含1，跟case2: $$vxy$$含0跟1，case 2又可以分成四個小case。反正不管怎麼分，$$uxz$$都不會在L內，下圖是兩種詳細解答。
+詳細sol1:
+![](https://i.imgur.com/vxmxqG8.png)
+sol2:
+![](https://i.imgur.com/flSVTf5.png)
+
+[Sipser 2.44]
+![](https://i.imgur.com/nNdN2pE.png)
+Sol:
+其實很簡單吧，令 $$L = \{1^p2^{p}3^p4^p\}$$ 割成$$uvxyz$$，分成的$$vxy$$的case有四種:
+$$vxy$$有1、有2、有3、有4。
+詳細sol1:
+![](https://i.imgur.com/OlUTtkd.png)
+詳細sol2:
+![](https://i.imgur.com/40iZUds.png)
+![](https://i.imgur.com/W5FwMCG.png)
+
+[Sipser 2.45]
+![](https://i.imgur.com/YWBdrox.png)
+Sol:
+![](https://i.imgur.com/D6FNM9y.png)
+
+[Sipser 2.57]
+![](https://i.imgur.com/KQpkFvG.png)
+Sol:
+這題比較難吧，case分很多。
+詳細sol1:
+![](https://i.imgur.com/b4B5Dea.png)
+詳細sol2:
+![](https://i.imgur.com/ivtPnsl.png)
+![](https://i.imgur.com/Wb7sIwg.png)
 
 Reference:
 [圖出處](http://web.cecs.pdx.edu/~sheard/course/CS581/notes/ContextFreePumpingLemma.pdf)

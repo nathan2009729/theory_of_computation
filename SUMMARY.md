@@ -11,4 +11,6 @@
   * [Pushdown Automata](pushdown-automata.md)
   * [Equivalent of CFG and PDA](equivalent-of-cfg-and-pda.md)
   * [Pumping Lemma of CFL](pumping-lemma-of-cfl.md)
+* [Turing Machine](turing-machine.md)
+  * [Formal Definition and Example](formal-definition-and-example.md)
 

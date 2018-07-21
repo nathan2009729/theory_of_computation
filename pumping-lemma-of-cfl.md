@@ -82,6 +82,6 @@ Sol:
 詳細sol2:
 ![](https://i.imgur.com/ivtPnsl.png)
 ![](https://i.imgur.com/Wb7sIwg.png)
-aaa
+
 Reference:
 [圖出處](http://web.cecs.pdx.edu/~sheard/course/CS581/notes/ContextFreePumpingLemma.pdf)
